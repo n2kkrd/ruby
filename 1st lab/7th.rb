@@ -70,8 +70,24 @@ def method1(num)
     return acc
 end
 
+def method2(num)
+    num = num.to_i
+    max = 0
+    num /= 10
+    while num != 0 do
+        x= num % 10
+        if x> max && x%3!=0 then 
+             max = x
+        end
+        num /= 10
+    end
+    return max
+end
+    
+
 puts 'Сумма чисел равна: ' + sum(num).to_s
 puts 'Произведение чисел равно: ' + proizv(num).to_s
 puts 'Максимальная цифра в числе: ' + max(num).to_s
 puts 'Минимальная цифра в числе: ' + min(num).to_s
 puts method1(num)
+puts method2(num)
