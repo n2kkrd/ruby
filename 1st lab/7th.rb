@@ -83,11 +83,47 @@ def method2(num)
     end
     return max
 end
-    
 
-puts 'Сумма чисел равна: ' + sum(num).to_s
-puts 'Произведение чисел равно: ' + proizv(num).to_s
+def men(n)
+    i=1
+    while i <= n
+        i = i + 1
+        if n % i == 0
+            return i
+            break
+        end
+    end
+end
+
+def aboba(num)
+    maxim = 0
+    for i in 2..num-1
+        if nod(num,i)!=1 && nod(num,i)%men(num)!=0
+            maxim=i
+        end
+    end
+    return maxim
+end
+
+def men5(n)
+    sum = 0
+    while n != 0 do
+        x= n % 10
+        if x<5
+            sum += x
+        end
+        n /= 10
+    end
+    return sum
+end
+def method3(num)
+    return aboba(num)*men5(num)
+end
+
+puts 'Сумма цифр равна: ' + sum(num).to_s
+puts 'Произведение цифр равно: ' + proizv(num).to_s
 puts 'Максимальная цифра в числе: ' + max(num).to_s
 puts 'Минимальная цифра в числе: ' + min(num).to_s
 puts method1(num)
 puts method2(num)
+puts method3(num)
