@@ -7,3 +7,4 @@ stroka = 'Одна большая строка с разными символа�
 kolvo = stroka.length
 puts kolvo 
 puts stroka.reverse + " | " + stroka.upcase + " | " + stroka.downcase + " | " + stroka.capitalize
+#irb режим и все методы класса и все методы объекто

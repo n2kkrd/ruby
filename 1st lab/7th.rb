@@ -1,5 +1,3 @@
-num = gets.chomp.to_i
-
 
 def sum(num)
     num = num.to_i
@@ -120,10 +118,45 @@ def method3(num)
     return aboba(num)*men5(num)
 end
 
-puts 'Сумма цифр равна: ' + sum(num).to_s
-puts 'Произведение цифр равно: ' + proizv(num).to_s
-puts 'Максимальная цифра в числе: ' + max(num).to_s
-puts 'Минимальная цифра в числе: ' + min(num).to_s
-puts method1(num)
-puts method2(num)
-puts method3(num)
+def vibor(method,num)
+    case method
+    when 'summa'
+        return "Сумма ваших цифр числа = " + sum(num).to_s
+    when 'composition'
+        return "Произведение ваших цифр числа =  " + proizv(num).to_s
+    when 'minimum'
+        return "Минимальная цифра вашего числа = " + min(num).to_s
+    when 'maximum'
+        return "Максимальная цифра вашего числа = " + max(num).to_s
+    when 'method1'
+        return "Количество чисел взаимно простых с вашим = " + method1(num).to_s
+    when 'method2'
+        return "Сумма цифр вашего числа, делящиеся на 3 = " + method2(num).to_s
+    when 'method3'
+        return "Делитель вашего числа, взаимно простой с количеством цифр = " + method3(num).to_s
+    when "help"
+        help()
+    else
+        puts "Такой функции нет"
+    end
+end
+
+def help()
+    puts" Список доступных методов.
+    1. summa - сумма цифр числа.
+    2. composition - произведение цифр числа.
+    3. minimum - минимальная цифра числа.
+    4. maximum - максимальная цифра числа.
+    5. method1 - количество чисел не взаимно простых с введенным.
+    6. method2 - Максимальная цифра числа, не делящуюся на 3
+    7. method3 - Произведение макс, не взаимно простого с данным, не дел на наименьший делитель, и суммы цифр числа, меньше 5
+    "
+end
+print 'Введите число: '
+num = gets.chomp.to_i
+puts help()
+print 'Введите метод: '
+method = gets.chomp
+
+
+puts vibor(method,num)

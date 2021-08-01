@@ -7,4 +7,4 @@ while num != 0 do
     num /= 10
 end
 
-puts 'Summa ravna ' + sum.to_s 
+puts 'Summa ravna ' + sum
